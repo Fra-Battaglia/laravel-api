@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProjectController as ProjectController; 
+use App\Http\Controllers\Api\ContactController as ContactController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('projects', ProjectController::class);
+
+Route::post('/contacts', [ContactController::class, 'store']);
 
 // Route::get('/projects', [ProjectController::class, 'index']);
 // Route::get('/projects/{slug}', [ProjectController::class, 'show']);
